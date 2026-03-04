@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cu-v-letter-001",
+    "scriptName": "✦ letter (with author)",
+    "findRegex": "\\[LETTER\\s+from=\"([^\"]*)\"\\]([\\s\\S]*?)\\[\\/LETTER\\]",
+    "replaceString": "<div class=\"cu-letter-wrap\"><div class=\"cu-letter\"><div class=\"cu-letter-from\">— $1</div>$2</div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "id": "cu-v-letter-002",
+    "scriptName": "✦ letter (no author)",
+    "findRegex": "\\[LETTER\\]([\\s\\S]*?)\\[\\/LETTER\\]",
+    "replaceString": "<div class=\"cu-letter-wrap\"><div class=\"cu-letter\">$1</div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

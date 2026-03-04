@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cu-v-sep-001",
+    "scriptName": "✦ scene separator",
+    "findRegex": "<hr\\s*/?>",
+    "replaceString": "<span class=\"cu-sep\"><span class=\"cu-sep-glyph\">✦</span></span>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": true,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cu-v-phone-001",
+    "scriptName": "✦ phone (named contact)",
+    "findRegex": "\\[PHONE\\s+from=\"([^\"]*)\"\\]([\\s\\S]*?)\\[\\/PHONE\\]",
+    "replaceString": "<div class=\"cu-phone-wrap\"><div class=\"cu-phone\"><div class=\"cu-phone-bar\"><span class=\"cu-phone-contact\">$1</span><div class=\"cu-phone-signal\"><span></span><span></span><span></span><span></span></div></div><div class=\"cu-phone-body\">$2</div></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "id": "cu-v-phone-002",
+    "scriptName": "✦ phone (no contact)",
+    "findRegex": "\\[PHONE\\]([\\s\\S]*?)\\[\\/PHONE\\]",
+    "replaceString": "<div class=\"cu-phone-wrap\"><div class=\"cu-phone\"><div class=\"cu-phone-bar\"><span class=\"cu-phone-contact\">сообщения</span><div class=\"cu-phone-signal\"><span></span><span></span><span></span><span></span></div></div><div class=\"cu-phone-body\">$1</div></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

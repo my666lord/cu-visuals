@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cu-v-news-001",
+    "scriptName": "✦ newspaper (with headline)",
+    "findRegex": "\\[NEWSPAPER\\s+headline=\"([^\"]*)\"\\]([\\s\\S]*?)\\[\\/NEWSPAPER\\]",
+    "replaceString": "<div class=\"cu-news-wrap\"><div class=\"cu-news\"><div class=\"cu-news-pub\">— — —</div><div class=\"cu-news-headline\">$1</div><div class=\"cu-news-body\">$2</div></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "id": "cu-v-news-002",
+    "scriptName": "✦ newspaper (no headline)",
+    "findRegex": "\\[NEWSPAPER\\]([\\s\\S]*?)\\[\\/NEWSPAPER\\]",
+    "replaceString": "<div class=\"cu-news-wrap\"><div class=\"cu-news\"><div class=\"cu-news-pub\">— — —</div><div class=\"cu-news-body\">$1</div></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

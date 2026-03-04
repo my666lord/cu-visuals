@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cu-v-diary-001",
+    "scriptName": "✦ diary (with date)",
+    "findRegex": "\\[DIARY\\s+date=\"([^\"]*)\"\\]([\\s\\S]*?)\\[\\/DIARY\\]",
+    "replaceString": "<div class=\"cu-diary-wrap\"><div class=\"cu-diary\"><div class=\"cu-diary-date\">$1</div>$2</div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  },
+  {
+    "id": "cu-v-diary-002",
+    "scriptName": "✦ diary (no date)",
+    "findRegex": "\\[DIARY\\]([\\s\\S]*?)\\[\\/DIARY\\]",
+    "replaceString": "<div class=\"cu-diary-wrap\"><div class=\"cu-diary\">$1</div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

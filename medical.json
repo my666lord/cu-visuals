@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cu-v-medical-001",
+    "scriptName": "✦ medical document",
+    "findRegex": "\\[MEDICAL\\s+type=\"([^\"]*)\"\\s+patient=\"([^\"]*)\"\\]([\\s\\S]*?)\\[\\/MEDICAL\\]",
+    "replaceString": "<div class=\"cu-medical-wrap\"><div class=\"cu-medical\"><div class=\"cu-medical-header\"><span class=\"cu-medical-type\">$1</span></div><div class=\"cu-medical-patient\">Пациент: $2</div><div class=\"cu-medical-body\">$3</div><div class=\"cu-medical-stamp\"></div></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

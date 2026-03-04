@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cu-v-think-001",
+    "scriptName": "✦ think hider",
+    "findRegex": "<think>[\\s\\S]*?<\\/think>\\s*",
+    "replaceString": "",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

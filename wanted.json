@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cu-v-wanted-001",
+    "scriptName": "✦ wanted poster",
+    "findRegex": "\\[WANTED\\s+name=\"([^\"]*)\"\\s+reward=\"([^\"]*)\"\\]([\\s\\S]*?)\\[\\/WANTED\\]",
+    "replaceString": "<div class=\"cu-wanted-wrap\"><div class=\"cu-wanted\"><div class=\"cu-wanted-header\">РАЗЫСКИВАЕТСЯ</div><div class=\"cu-wanted-name\">$1</div><div class=\"cu-wanted-body\">$3</div><div class=\"cu-wanted-reward\">Вознаграждение: <strong>$2</strong></div></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]

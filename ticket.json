@@ -1,0 +1,17 @@
+[
+  {
+    "id": "cu-v-ticket-001",
+    "scriptName": "✦ ticket renderer",
+    "findRegex": "/\\[TICKET\\]([\\s\\S]*?)\\[\\/TICKET\\]/gi",
+    "replaceString": "<div class=\"cu-ticket-wrap\"><div class=\"cu-ticket\" data-raw=\"$1\"></div></div>",
+    "trimStrings": [],
+    "placement": [2],
+    "disabled": false,
+    "markdownOnly": false,
+    "promptOnly": false,
+    "runOnEdit": true,
+    "substituteRegex": 0,
+    "minDepth": null,
+    "maxDepth": null
+  }
+]
