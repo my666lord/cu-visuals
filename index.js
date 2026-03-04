@@ -28,13 +28,17 @@
 
   // ─── Regex store ──────────────────────────────────────────────
 
- function getRegexStore() {
-    if (!window.extension_settings) window.extension_settings = {};
-    if (!window.extension_settings.regex) window.extension_settings.regex = {};
-    if (!Array.isArray(window.extension_settings.regex.scripts)) {
-      window.extension_settings.regex.scripts = [];
+  function getRegexStore() {
+    // ST stores global regex scripts under one of these keys
+    const keys = ["regex_scripts", "global_regex", "character_regex"];
+    for (const k of keys) {
+      if (Array.isArray(window.extension_settings?.[k])) {
+        return window.extension_settings[k];
+      }
     }
-    return window.extension_settings.regex.scripts;
+    if (!window.extension_settings) window.extension_settings = {};
+    window.extension_settings.regex_scripts = [];
+    return window.extension_settings.regex_scripts;
   }
 
   function removePack(packId) {
