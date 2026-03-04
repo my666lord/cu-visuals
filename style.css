@@ -1,0 +1,609 @@
+/* ═══════════════════════════════════════════════════════════
+   ✦ cu-visuals — visual layer for chuDICKuwu preset
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── SETTINGS PANEL ─────────────────────────────────────────── */
+
+.cu-panel { padding: 6px 0 4px; }
+
+.cu-panel-sub {
+  font-size: 0.72em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--SmartThemeBorderColor, rgba(255,255,255,0.08));
+}
+
+.cu-pack-row {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.cu-pack-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.88em;
+}
+
+.cu-pack-icon { width: 18px; text-align: center; flex-shrink: 0; }
+
+.cu-pack-name {
+  font-weight: 500;
+  color: var(--SmartThemeBodyColor, #ccc);
+  opacity: 0.55;
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.cu-on .cu-pack-name { opacity: 1; color: #C49C4A; }
+
+.cu-pack-desc {
+  font-size: 0.73em;
+  opacity: 0.32;
+  padding-left: 26px;
+  line-height: 1.45;
+  pointer-events: none;
+}
+
+/* ── SCENE SEPARATOR ─────────────────────────────────────────── */
+
+.cu-sep {
+  display: block;
+  text-align: center;
+  margin: 1.6em 0;
+  user-select: none;
+}
+
+.cu-sep::before,
+.cu-sep::after {
+  content: "─ ─ ─";
+  letter-spacing: 0.4em;
+  opacity: 0.18;
+  font-size: 0.65em;
+  color: var(--SmartThemeBodyColor, #ccc);
+  vertical-align: middle;
+}
+
+.cu-sep-glyph {
+  display: inline-block;
+  color: #B8913A;
+  opacity: 0.6;
+  font-size: 0.75em;
+  letter-spacing: 0.3em;
+  vertical-align: middle;
+  margin: 0 0.6em;
+}
+
+/* ── TIME DISPLAY ─────────────────────────────────────────────── */
+
+.cu-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 0.5em;
+  font-family: "Courier New", monospace;
+  font-size: 0.68em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  padding: 4px 0 12px;
+  border-bottom: 1px solid var(--SmartThemeBorderColor, rgba(255,255,255,0.1));
+  margin-bottom: 14px;
+}
+
+.cu-time-dim  { opacity: 0.55; }
+.cu-time-bold { font-weight: 700; opacity: 0.85; color: #C4A060; }
+
+/* ── LETTER ──────────────────────────────────────────────────── */
+
+.cu-letter-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-letter {
+  background: #F0E6C8;
+  color: #1A1208;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9em;
+  line-height: 1.85;
+  padding: 2em 2.6em 2.2em;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  box-shadow: 2px 2px 0 #C8B070, 5px 5px 14px rgba(0,0,0,0.45);
+  border: 1px solid #C0A858;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+}
+
+.cu-letter::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0;
+  border-style: solid;
+  border-width: 22px 22px 0 0;
+  border-color: #A88A30 transparent transparent transparent;
+}
+
+.cu-letter::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    transparent, transparent 1.85em,
+    rgba(160,120,40,0.07) 1.85em, rgba(160,120,40,0.07) calc(1.85em + 1px)
+  );
+  pointer-events: none;
+}
+
+.cu-letter-from {
+  font-size: 0.72em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 1.2em;
+}
+
+/* ── PHONE ───────────────────────────────────────────────────── */
+
+.cu-phone-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-phone {
+  width: 260px;
+  max-width: 90%;
+  background: #0D0E11;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1.5px #252830, 0 0 0 3px #16181D, 0 12px 36px rgba(0,0,0,0.65);
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 0.83em;
+}
+
+.cu-phone-bar {
+  background: #13151A;
+  padding: 9px 16px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1E2028;
+}
+
+.cu-phone-contact { color: #9CA3B0; font-size: 0.88em; font-weight: 500; }
+
+.cu-phone-signal {
+  display: flex; gap: 3px; align-items: flex-end; height: 10px;
+}
+.cu-phone-signal span { display: block; width: 3px; background: #3A3F50; border-radius: 1px; }
+.cu-phone-signal span:nth-child(1) { height: 30%; }
+.cu-phone-signal span:nth-child(2) { height: 55%; }
+.cu-phone-signal span:nth-child(3) { height: 75%; background: #5A6080; }
+.cu-phone-signal span:nth-child(4) { height: 100%; background: #7A8090; }
+
+.cu-phone-body { padding: 12px 14px 16px; color: #C8CDD8; line-height: 1.6; min-height: 50px; }
+
+/* ── RECEIPT ─────────────────────────────────────────────────── */
+
+.cu-receipt-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-receipt {
+  background: #FAFAF5;
+  color: #1C1C1C;
+  font-family: "Courier New", monospace;
+  font-size: 0.8em;
+  line-height: 1.7;
+  padding: 1.8em 2.2em 3em;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  /* Zigzag bottom edge */
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% calc(100% - 12px),
+    97% 100%, 94% calc(100% - 12px), 91% 100%, 88% calc(100% - 12px),
+    85% 100%, 82% calc(100% - 12px), 79% 100%, 76% calc(100% - 12px),
+    73% 100%, 70% calc(100% - 12px), 67% 100%, 64% calc(100% - 12px),
+    61% 100%, 58% calc(100% - 12px), 55% 100%, 52% calc(100% - 12px),
+    49% 100%, 46% calc(100% - 12px), 43% 100%, 40% calc(100% - 12px),
+    37% 100%, 34% calc(100% - 12px), 31% 100%, 28% calc(100% - 12px),
+    25% 100%, 22% calc(100% - 12px), 19% 100%, 16% calc(100% - 12px),
+    13% 100%, 10% calc(100% - 12px), 7% 100%,  4% calc(100% - 12px),
+    1% 100%, 0% calc(100% - 12px)
+  );
+}
+
+.cu-receipt-store {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.05em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.2em;
+}
+
+.cu-receipt-date { text-align: center; opacity: 0.5; font-size: 0.85em; margin-bottom: 1em; }
+
+.cu-receipt-divider {
+  border: none;
+  border-top: 1px dashed #aaa;
+  margin: 0.6em 0;
+  background: none;
+}
+
+.cu-receipt-items { width: 100%; border-collapse: collapse; }
+.cu-receipt-items td { padding: 1px 0; vertical-align: top; }
+.cu-receipt-items td:last-child { text-align: right; white-space: nowrap; padding-left: 1em; }
+
+.cu-receipt-discount-row td { opacity: 0.55; }
+
+.cu-receipt-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.05em;
+  border-top: 1px solid #999;
+  margin-top: 0.5em;
+  padding-top: 0.3em;
+}
+
+.cu-receipt-paid {
+  text-align: center;
+  opacity: 0.45;
+  font-size: 0.78em;
+  margin-top: 0.7em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cu-receipt-thanks {
+  text-align: center;
+  opacity: 0.3;
+  font-size: 0.75em;
+  margin-top: 1em;
+  letter-spacing: 0.06em;
+}
+
+/* ── TICKET ──────────────────────────────────────────────────── */
+
+.cu-ticket-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-ticket {
+  background: linear-gradient(135deg, #1A1F2E 0%, #141826 100%);
+  color: #E8EAF0;
+  font-family: -apple-system, "Helvetica Neue", sans-serif;
+  font-size: 0.85em;
+  padding: 1.6em 1.8em 1.4em;
+  max-width: 360px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.06);
+  /* Notches on sides */
+  clip-path: polygon(
+    0 0, calc(100% - 0px) 0,
+    100% 0, 100% calc(50% - 14px),
+    calc(100% + 14px) 50%,
+    100% calc(50% + 14px), 100% 100%,
+    0 100%, 0 calc(50% + 14px),
+    -14px 50%, 0 calc(50% - 14px)
+  );
+}
+
+.cu-ticket-type {
+  font-size: 0.72em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 0.6em;
+}
+
+.cu-ticket-route {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.8em;
+}
+
+.cu-ticket-city {
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #F0F2F8;
+}
+
+.cu-ticket-arrow { opacity: 0.35; font-size: 1em; }
+
+.cu-ticket-meta {
+  display: flex;
+  gap: 1.2em;
+  font-size: 0.82em;
+  opacity: 0.55;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 0.6em;
+  margin-bottom: 0.5em;
+}
+
+.cu-ticket-time { color: #A8C4E8; font-weight: 600; opacity: 1; }
+
+.cu-ticket-passenger {
+  font-size: 0.78em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.38;
+}
+
+.cu-ticket-barcode {
+  margin-top: 0.9em;
+  letter-spacing: 0.04em;
+  opacity: 0.12;
+  font-size: 1.2em;
+  font-family: monospace;
+  user-select: none;
+}
+
+/* ── NEWSPAPER ───────────────────────────────────────────────── */
+
+.cu-news-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-news {
+  background: #F2EDD7;
+  color: #1A1A1A;
+  font-family: "Times New Roman", Georgia, serif;
+  max-width: 440px;
+  width: 100%;
+  padding: 1.4em 1.8em 1.8em;
+  border: 1px solid #C8BEA0;
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.28);
+  transform: rotate(-0.35deg);
+}
+
+.cu-news-pub {
+  text-align: center;
+  font-size: 0.6em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.38;
+  border-top: 2px solid #1A1A1A;
+  border-bottom: 1px solid #1A1A1A;
+  padding: 4px 0;
+  margin-bottom: 0.7em;
+}
+
+.cu-news-headline {
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 0.8em;
+  border-bottom: 2px solid #1A1A1A;
+  padding-bottom: 0.5em;
+}
+
+.cu-news-body {
+  font-size: 0.83em;
+  line-height: 1.75;
+  text-align: justify;
+  columns: 2;
+  column-gap: 1.4em;
+  column-rule: 1px solid rgba(0,0,0,0.15);
+}
+
+/* ── DIARY ───────────────────────────────────────────────────── */
+
+.cu-diary-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-diary {
+  background: #FDFAF0;
+  color: #2A2018;
+  font-family: Georgia, serif;
+  font-size: 0.88em;
+  line-height: 1.9;
+  padding: 1.8em 2em 2em 3.6em;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  border-left: 3px solid #E8D0B0;
+  box-shadow: inset -1px 0 0 #E0D0A0, 2px 4px 16px rgba(0,0,0,0.18);
+  background-image: repeating-linear-gradient(
+    transparent, transparent 1.9em,
+    rgba(100,80,40,0.07) 1.9em, rgba(100,80,40,0.07) calc(1.9em + 1px)
+  );
+}
+
+.cu-diary-date {
+  font-size: 0.75em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.42;
+  margin-bottom: 0.8em;
+  font-style: italic;
+}
+
+/* ── WANTED ──────────────────────────────────────────────────── */
+
+.cu-wanted-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-wanted {
+  background: #F5EDD0;
+  color: #1A1208;
+  font-family: "Times New Roman", Georgia, serif;
+  max-width: 320px;
+  width: 100%;
+  padding: 1.6em 2em;
+  border: 3px solid #8B6914;
+  box-shadow: 4px 4px 0 #5C4510, 0 8px 24px rgba(0,0,0,0.4);
+  text-align: center;
+  position: relative;
+}
+
+.cu-wanted::before,
+.cu-wanted::after {
+  content: "";
+  position: absolute;
+  left: 8px; right: 8px;
+  height: 2px;
+  background: #8B6914;
+}
+.cu-wanted::before { top: 8px; }
+.cu-wanted::after  { bottom: 8px; }
+
+.cu-wanted-header {
+  font-size: 1.4em;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.3em;
+  color: #5C2A00;
+}
+
+.cu-wanted-name {
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  border-top: 2px solid rgba(0,0,0,0.2);
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  padding: 0.3em 0;
+  margin: 0.4em 0;
+}
+
+.cu-wanted-body {
+  font-size: 0.82em;
+  line-height: 1.7;
+  text-align: left;
+  margin: 0.8em 0;
+  opacity: 0.8;
+}
+
+.cu-wanted-reward {
+  font-size: 0.88em;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding-top: 0.6em;
+  margin-top: 0.6em;
+  color: #5C2A00;
+}
+
+/* ── MEDICAL DOCUMENT ────────────────────────────────────────── */
+
+.cu-medical-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-medical {
+  background: #FAFCFF;
+  color: #1A1A2A;
+  font-family: "Courier New", monospace;
+  font-size: 0.82em;
+  line-height: 1.7;
+  padding: 1.6em 2em 2em;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #B0C0D8;
+  border-top: 4px solid #3A5A9A;
+  box-shadow: 1px 2px 12px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.cu-medical-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid #B0C0D8;
+}
+
+.cu-medical-type {
+  font-size: 0.72em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #3A5A9A;
+  font-weight: bold;
+}
+
+.cu-medical-patient {
+  font-size: 0.85em;
+  opacity: 0.6;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px dashed #B0C0D8;
+}
+
+.cu-medical-body { line-height: 1.8; }
+
+.cu-medical-stamp {
+  position: absolute;
+  bottom: 1.2em;
+  right: 1.4em;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid rgba(58,90,154,0.18);
+  opacity: 0.3;
+}
+.cu-medical-stamp::after {
+  content: "✦";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
+  color: #3A5A9A;
+}
+
+/* ── MENU ────────────────────────────────────────────────────── */
+
+.cu-menu-wrap { display: flex; justify-content: center; margin: 1.4em 0; }
+
+.cu-menu {
+  background: #1A1610;
+  color: #D8C890;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.86em;
+  max-width: 360px;
+  width: 100%;
+  padding: 1.8em 2.2em;
+  border: 1px solid #4A3A18;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.5), inset 0 0 40px rgba(0,0,0,0.3);
+}
+
+.cu-menu-header {
+  text-align: center;
+  font-size: 1.1em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #C8A84A;
+  margin-bottom: 1.2em;
+  padding-bottom: 0.7em;
+  border-bottom: 1px solid #4A3A18;
+}
+
+.cu-menu-section {
+  font-size: 0.72em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C8A84A;
+  opacity: 0.6;
+  margin: 1em 0 0.4em;
+}
+
+.cu-menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5em;
+  padding: 0.25em 0;
+  border-bottom: 1px dotted rgba(200,168,74,0.12);
+  line-height: 1.5;
+}
+
+.cu-menu-price { white-space: nowrap; opacity: 0.8; font-size: 0.9em; }
+
+/* ── QUOTES & THOUGHTS ───────────────────────────────────────── */
+
+.cu-q    { color: inherit; }
+.cu-thought { opacity: 0.72; font-style: italic; }
