@@ -51,7 +51,7 @@
   async function injectPack(packId) {
     removePack(packId);
     try {
-      const res = await fetch(`/${EXT_FOLDER}/regexes/${packId}.json`);
+      const res = await fetch(`/${EXT_FOLDER}/${packId}.json`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const scripts = await res.json();
       if (!Array.isArray(scripts)) throw new Error("not array");
